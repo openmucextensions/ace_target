@@ -19,3 +19,13 @@ agent.identification.agentid=openmuc-1
 agent.discovery.serverurls=http://localhost:8080
 ```
 The`agentid` parameter sets the identification of the target. It must be unique for each ACE server instance. The `serverurls` parameter defines one or more urls of the central ACE servers.
+
+## Deployment
+Bundles deployed to the target will be stored in the cache directory of the OSGi framework (`felix-cache` by default). The default setting of Felix in OpenMUC clears the cache on startup of the framework and installs and starts all bundles from the `/bundles` folder afterwards. This behavior deletes all centrally deployed bundles. To prevent the cache from being flushed, the following setting in the `config.properties` file must be set:
+
+```
+org.osgi.framework.storage.clean=none
+```
+
+## Known limitations
+Out of the box, ACE can only handle OSGi bundles and .cfg configuration files. It's not possible to distribute other artifacts like the `channels.xml` file. Adding support for new types of artifacts is possible, more details can be found in the [documentation](https://ace.apache.org/docs/adding-custom-artifact-types.html). Because of this, an empty `channels.xml` file is part of this template. If not provided to the OpenMUC framework, an error occurs.
