@@ -11,6 +11,14 @@ large number of on-premise clients allows scenarios like:
 
 The template currently uses Apache ACE 2.1.0. General information about ACE can be found in the [ACE user guide](https://ace.apache.org/docs/user-guide.html). 
 
+## Licenses
+The files of this project have different sources and are protected by different licenses:
+* The `run-openmuc.sh` file as well as all files in the `/conf` directory come from the [OpenMUC project](https://www.openmuc.org/) and are licensed under GNU GENERAL PUBLIC LICENSE Version 3.0
+* The ACE agent library `com.apache.ace.agent.jar` comes from the [Apache ACE project](https://ace.apache.org/) and is licensed under Apache License, Version 2.0
+* The Apache Felix OSGi framework comes from the [Apache Felix project](http://felix.apache.org/) and is licensed under Apache License, Version 2.0
+
+All other work of this project including the documentation is licensed under Apache License, Version 2.0.
+
 ## Configuration
 The configuration of the ACE agent bundle can be set inside the [config.properties](conf/config.properties) file. This template includes the most common parameters preconfigured in the file. If any value is set, it's the default value. For a more detailed description of the parameters see the [ACE user guide](https://ace.apache.org/docs/user-guide.html#target-configuration). To start, at least the following both parameters must be set:
 
